@@ -58,11 +58,11 @@
             <p class="eyebrow">Salud integral 24/7</p>
             <h1>Tu clínica de especialistas en Zarcero</h1>
             <p class="lead">
-              Medicina general, laboratorio clínico y más de 15 especialidades en un solo lugar. Agenda tu cita en pocos pasos.
+              Medicina general, laboratorio clínico y más de 15 especialidades en un solo lugar. Coordinamos tu cita por el canal que prefieras.
             </p>
             <div class="hero__cta">
-              <a class="btn btn--primary" href="#agendar" data-scroll>Agendar cita</a>
-              <a class="btn btn--ghost" href="#servicios">Ver servicios</a>
+              <a class="btn btn--primary" href="templates/agendar.html">Agendar cita</a>
+              <a class="btn btn--ghost" href="templates/servicios.html">Ver servicios</a>
             </div>
             <div class="hero__trust" aria-label="Datos clave de la clínica">
               <div>
@@ -79,39 +79,11 @@
               </div>
             </div>
           </div>
-          <div class="hero__card" id="agendar" aria-live="polite">
-            <h2>Agenda tu cita</h2>
-            <form id="appointment-form" novalidate>
-              <div class="form-group">
-                <label for="appointment-specialty">Especialidad</label>
-                <select id="appointment-specialty" name="specialty" required>
-                  <option value="" disabled selected>Selecciona una especialidad</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="appointment-doctor">Profesional</label>
-                <select id="appointment-doctor" name="doctor" required>
-                  <option value="" disabled selected>Selecciona un profesional</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="appointment-mode">Modalidad</label>
-                <div class="radio-group" id="appointment-mode">
-                  <label><input type="radio" name="mode" value="presencial" checked /> Presencial</label>
-                  <label><input type="radio" name="mode" value="virtual" /> Virtual</label>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="appointment-date">Fecha preferida</label>
-                <input type="date" id="appointment-date" name="date" required />
-              </div>
-              <div class="form-group">
-                <label for="appointment-notes">Motivo de consulta</label>
-                <textarea id="appointment-notes" name="notes" rows="3" placeholder="Describe brevemente tu necesidad"></textarea>
-              </div>
-              <button type="submit" class="btn btn--primary btn--full">Continuar</button>
-              <p class="form-hint">Confirmaremos tu cita por WhatsApp al <strong>8838-2301</strong>.</p>
-            </form>
+          <div class="hero__card" aria-live="polite">
+            <h2>Coordinamos tu cita</h2>
+            <p>Reservá en línea o por WhatsApp. Confirmamos disponibilidad en menos de 2 horas hábiles.</p>
+            <a class="btn btn--primary btn--full" href="templates/agendar.html">Iniciar reserva</a>
+            <p class="form-hint">¿Dudas? Escribí al <strong>8838-2301</strong>.</p>
           </div>
         </div>
       </section>
@@ -119,10 +91,13 @@
       <section class="services" id="servicios" aria-labelledby="services-title">
         <div class="container">
           <div class="section-header">
-            <h2 id="services-title">Especialidades y servicios</h2>
-            <p>Un equipo multidisciplinario para tu bienestar y el de tu familia.</p>
+            <h2 id="services-title">Especialidades destacadas</h2>
+            <p>Elegí la especialidad que necesitás y conocé el detalle completo en nuestras páginas dedicadas.</p>
           </div>
           <div class="services__grid" id="services-grid"></div>
+          <div class="section-footer">
+            <a class="btn btn--ghost" href="templates/servicios.html">Ver todos los servicios</a>
+          </div>
         </div>
       </section>
 
@@ -137,10 +112,13 @@
       <section class="specialists" id="especialistas" aria-labelledby="specialists-title">
         <div class="container">
           <div class="section-header">
-            <h2 id="specialists-title">Equipo de especialistas</h2>
-            <p>Profesionales colegiados con experiencia en diagnóstico y tratamiento integral.</p>
+            <h2 id="specialists-title">Profesionales destacados</h2>
+            <p>Conocé a parte del equipo multidisciplinario que acompaña a nuestros pacientes cada día.</p>
           </div>
           <div class="specialists__grid" id="specialists-grid"></div>
+          <div class="section-footer">
+            <a class="btn btn--ghost" href="templates/especialistas.html">Ver todo el equipo</a>
+          </div>
         </div>
       </section>
 
@@ -149,21 +127,17 @@
           <div class="lab__copy">
             <h2 id="lab-title">Laboratorio clínico Monte Olivo</h2>
             <p>
-              Dirigido por la Dra. Diana Carolina Barahona Jiménez. Resultados confiables y entrega ágil para exámenes de rutina y pruebas especiales.
+              Resultados confiables dirigidos por la Dra. Diana Carolina Barahona Jiménez. Entrega digital y física coordinada con nuestros especialistas.
             </p>
             <ul class="lab__list" id="lab-tests"></ul>
-            <div class="lab__meta">
-              <p><strong>Horario:</strong> Lunes a viernes 7:00 a.m. – 3:00 p.m. · Sábados 7:00 a.m. – 12:00 m.d.</p>
-              <p><strong>Teléfonos:</strong> 2463-5006 · 8980-6406 · 8838-2301</p>
-            </div>
-            <a class="btn btn--ghost" href="#agendar" data-scroll>Agendar examen</a>
+            <a class="btn btn--primary" href="templates/laboratorio.html">Ver servicios de laboratorio</a>
           </div>
           <div class="lab__card">
-            <h3>Preparación para tu examen</h3>
+            <h3>¿Qué incluye?</h3>
             <ul>
-              <li>Revisaremos requisitos específicos al confirmar tu cita.</li>
-              <li>Recibirás recordatorios automatizados por WhatsApp.</li>
-              <li>Resultados disponibles digitalmente y en recepción.</li>
+              <li>Paneles de control crónico y campañas preventivas.</li>
+              <li>Toma de muestra a domicilio en Zarcero y comunidades cercanas.</li>
+              <li>Coordinación directa con nuestros especialistas.</li>
             </ul>
           </div>
         </div>
@@ -174,17 +148,11 @@
           <div class="news__header">
             <div>
               <h2 id="news-title">Noticias y anuncios</h2>
-              <p>Mantente al día con campañas de salud, disponibilidad de especialistas y promociones.</p>
+              <p>Mantenete informado sobre campañas, disponibilidad de horarios y consejos de salud.</p>
             </div>
-            <div class="news__filters" role="group" aria-label="Filtrar noticias">
-              <button class="filter-btn is-active" data-filter="all">Todo</button>
-              <button class="filter-btn" data-filter="especialidades">Especialidades</button>
-              <button class="filter-btn" data-filter="campañas">Campañas</button>
-              <button class="filter-btn" data-filter="avisos">Avisos</button>
-            </div>
+            <a class="btn btn--ghost" href="templates/noticias.html">Ver todas las noticias</a>
           </div>
           <div class="news__grid" id="news-grid"></div>
-          <a class="btn btn--ghost" href="#contacto" data-scroll>Solicitar publicación</a>
         </div>
       </section>
 
@@ -202,48 +170,23 @@
         </div>
       </section>
 
-      <section class="cta" aria-label="CTA secundaria">
+      <section class="cta" aria-label="CTA agenda">
         <div class="container cta__inner">
           <div>
             <h2>¿Listo para tu próxima cita?</h2>
-            <p>Agenda en línea o contáctanos por los canales disponibles. Estamos para ayudarte 24/7.</p>
+            <p>Agendá en línea o seleccioná el canal que prefieras, nuestro equipo está disponible 24/7.</p>
           </div>
-          <a class="btn btn--primary" href="#agendar" data-scroll>Agendar ahora</a>
+          <a class="btn btn--primary" href="templates/agendar.html">Agendar ahora</a>
         </div>
       </section>
 
-      <section class="contact" id="contacto" aria-labelledby="contact-title">
-        <div class="container contact__grid">
+      <section class="cta" aria-label="CTA contacto">
+        <div class="container cta__inner">
           <div>
-            <h2 id="contact-title">Contacto y ubicación</h2>
-            <p>Frente al EBAIS de Laguna, Zarcero, Alajuela.</p>
-            <ul class="contact__list">
-              <li><strong>Teléfono:</strong> <a href="tel:+50624635005">2463-5005</a></li>
-              <li><strong>WhatsApp:</strong> <a href="https://wa.me/50688382301">8838-2301</a></li>
-              <li><strong>Emergencias:</strong> 6071-1273</li>
-              <li><strong>Correo:</strong> <a href="mailto:clinicemonteolivo@gmail.com">clinicemonteolivo@gmail.com</a></li>
-            </ul>
-            <div class="contact__hours">
-              <h3>Horarios</h3>
-              <p>Consultas médicas: Lunes a domingo 24/7</p>
-              <p>Laboratorio: Lunes a viernes 7:00 a.m. – 3:00 p.m., sábados 7:00 a.m. – 12:00 m.d.</p>
-            </div>
-            <div class="contact__social">
-              <h3>Síguenos</h3>
-              <ul>
-                <li><a href="https://www.facebook.com/ClinicaMonteOlivo/" target="_blank" rel="noreferrer noopener">Facebook</a></li>
-                <li><a href="https://www.instagram.com/clinica_monteolivo/" target="_blank" rel="noreferrer noopener">Instagram</a></li>
-              </ul>
-            </div>
+            <h2>¿Necesitás asistencia personalizada?</h2>
+            <p>Contactanos y coordinamos tu atención, indicaciones o presupuestos en minutos.</p>
           </div>
-          <iframe
-            class="contact__map"
-            title="Mapa de ubicación"
-            loading="lazy"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.399144223665!2d-84.394!3d10.226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa09f61f479cb89%3A0x6c4f91adced1fcf7!2sCl%C3%ADnica%20Monte%20Olivo!5e0!3m2!1ses!2scr!4v1700000000000!5m2!1ses!2scr"
-            allowfullscreen
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
+          <a class="btn btn--ghost" href="templates/contacto.html">Ir a contacto</a>
         </div>
       </section>
     </main>
@@ -272,15 +215,6 @@
         </form>
       </div>
     </footer>
-
-    <div class="modal" id="modal-confirm" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
-      <div class="modal__content">
-        <button class="modal__close" aria-label="Cerrar">&times;</button>
-        <h2 id="modal-title">¡Gracias! Estamos gestionando tu cita</h2>
-        <p>Enviaremos la confirmación al número registrado en la clínica. Si deseas acelerar tu cita, escribe al <strong>WhatsApp 8838-2301</strong>.</p>
-        <button class="btn btn--primary" data-close-modal>Entendido</button>
-      </div>
-    </div>
 
     <script type="module" src="scripts/app.js"></script>
   </body>

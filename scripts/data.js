@@ -49,6 +49,14 @@ const CMO_DATA = {
       description: "Exámenes de rutina y pruebas especializadas con resultados confiables y rápidos.",
       cta: "Agendar",
     },
+    {
+      id: "diana-barahona",
+      name: "Dra. Diana Carolina Barahona",
+      specialty: "Dirección Técnica de Laboratorio",
+      schedule: "Lunes a sábado · 7:00 a.m. - 3:00 p.m.",
+      format: "Presencial",
+      photo: "https://i.pravatar.cc/160?img=21",
+    },
   ],
   specialists: [
     {
@@ -482,6 +490,7 @@ const CMO_DATA = {
     "marianela-salas": "ginecologia",
     "johnny-rodriguez": "urologia",
     "karla-coto": "terapia-lenguaje",
+    "diana-barahona": "laboratorio",
   },
   specialistAvailability: [
     {

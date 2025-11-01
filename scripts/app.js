@@ -2,15 +2,11 @@ import CMO_DATA from "./data.js";
 
 const navToggle = document.querySelector(".nav-toggle");
 const siteNav = document.querySelector("#site-nav");
-const appointmentForm = document.querySelector("#appointment-form");
 const servicesGrid = document.querySelector("#services-grid");
 const specialistsGrid = document.querySelector("#specialists-grid");
 const labList = document.querySelector("#lab-tests");
 const newsGrid = document.querySelector("#news-grid");
-const filterButtons = document.querySelectorAll(".filter-btn");
 const testimonialsViewport = document.querySelector("#testimonials-viewport");
-const modal = document.querySelector("#modal-confirm");
-const modalCloseButtons = modal?.querySelectorAll("[data-close-modal], .modal__close");
 const banner = document.querySelector("#banner-emergente");
 const bannerText = banner?.querySelector(".banner__text");
 const bannerClose = banner?.querySelector(".banner__close");
@@ -18,7 +14,6 @@ const yearSpan = document.querySelector("#year");
 const pageType = document.body?.dataset.page || "home";
 
 const state = {
-  filter: "all",
   testimonialIndex: 0,
 };
 
@@ -53,14 +48,18 @@ siteNav?.querySelectorAll("a").forEach((link) => {
 
 const renderServices = () => {
   if (!servicesGrid) return;
-  servicesGrid.innerHTML = CMO_DATA.services
+  const items = CMO_DATA.services.slice(0, 4);
+  servicesGrid.innerHTML = items
     .map(
       (service) => `
         <article class="service-card" data-service="${service.id}">
           <div class="service-card__icon" aria-hidden="true">${service.icon}</div>
           <h3>${service.title}</h3>
           <p>${service.description}</p>
-          <button class="btn btn--ghost" data-service-cta="${service.id}">Agendar</button>
+          <div class="service-card__actions">
+            <a class="btn btn--ghost" href="${service.id === "laboratorio" ? "templates/laboratorio.html" : `templates/${service.id}.html`}">Ver especialidad</a>
+            <button class="btn btn--primary" data-service-cta="${service.id}">Agendar</button>
+          </div>
         </article>
       `
     )
@@ -69,7 +68,8 @@ const renderServices = () => {
 
 const renderSpecialists = () => {
   if (!specialistsGrid) return;
-  specialistsGrid.innerHTML = CMO_DATA.specialists
+  const items = CMO_DATA.specialists.slice(0, 3);
+  specialistsGrid.innerHTML = items
     .map(
       (specialist) => `
         <article class="specialist-card">
@@ -103,8 +103,8 @@ const formatDate = (dateString) => {
 
 const renderNews = () => {
   if (!newsGrid) return;
-  newsGrid.innerHTML = CMO_DATA.news
-    .filter((item) => state.filter === "all" || item.category === state.filter)
+  const items = CMO_DATA.news.slice(0, 3);
+  newsGrid.innerHTML = items
     .map(
       (item) => `
         <article class="news-card" data-category="${item.category}">
@@ -114,7 +114,7 @@ const renderNews = () => {
           </div>
           <h3>${item.title}</h3>
           <p>${item.excerpt}</p>
-          <a href="${item.link}" class="btn btn--ghost">Leer más</a>
+          <a href="${item.link || "templates/noticias.html"}" class="btn btn--ghost">Leer más</a>
         </article>
       `
     )
@@ -136,34 +136,12 @@ const renderTestimonials = () => {
   testimonialsViewport.innerHTML = cards;
 };
 
-const populateSelects = () => {
-  const specialtySelect = document.querySelector("#appointment-specialty");
-  const doctorSelect = document.querySelector("#appointment-doctor");
-
-  if (specialtySelect) {
-    specialtySelect.innerHTML += CMO_DATA.services
-      .map((service) => `<option value="${service.id}">${service.title}</option>`)
-      .join("");
-  }
-
-  if (doctorSelect) {
-    doctorSelect.innerHTML += CMO_DATA.specialists
-      .map((specialist) => `<option value="${specialist.id}">${specialist.name}</option>`)
-      .join("");
-  }
-};
-
 const handleServiceCTA = (event) => {
   const button = event.target.closest("[data-service-cta]");
   if (!button) return;
 
   const serviceId = button.dataset.serviceCta;
-  const specialtySelect = document.querySelector("#appointment-specialty");
-  if (specialtySelect) {
-    specialtySelect.value = serviceId;
-    specialtySelect.dispatchEvent(new Event("change"));
-  }
-  document.getElementById("agendar")?.scrollIntoView({ behavior: "smooth" });
+  window.location.href = `templates/${serviceId}.html`;
 };
 
 const handleSpecialistCTA = (event) => {
@@ -171,24 +149,13 @@ const handleSpecialistCTA = (event) => {
   if (!button) return;
 
   const doctorId = button.dataset.specialist;
-  const doctorSelect = document.querySelector("#appointment-doctor");
-  if (doctorSelect) {
-    doctorSelect.value = doctorId;
-    doctorSelect.dispatchEvent(new Event("change"));
-  }
-  document.getElementById("agendar")?.scrollIntoView({ behavior: "smooth" });
+  const specialtyId = CMO_DATA.serviceMap?.[doctorId];
+  const target = specialtyId ? `templates/${specialtyId}.html` : "templates/agendar.html";
+  window.location.href = target;
 };
 
 servicesGrid?.addEventListener("click", handleServiceCTA);
 specialistsGrid?.addEventListener("click", handleSpecialistCTA);
-
-globalThis.addEventListener("click", (event) => {
-  const button = event.target.closest(".filter-btn");
-  if (!button) return;
-  state.filter = button.dataset.filter;
-  filterButtons.forEach((btn) => btn.classList.toggle("is-active", btn === button));
-  renderNews();
-});
 
 globalThis.addEventListener("click", (event) => {
   const control = event.target.closest(".carousel__control");
@@ -201,27 +168,6 @@ globalThis.addEventListener("click", (event) => {
     state.testimonialIndex = (state.testimonialIndex - 1 + max) % max;
   }
   renderTestimonials();
-});
-
-appointmentForm?.addEventListener("submit", (event) => {
-  event.preventDefault();
-  if (!appointmentForm.checkValidity()) {
-    appointmentForm.reportValidity();
-    return;
-  }
-  modal?.removeAttribute("hidden");
-});
-
-modalCloseButtons?.forEach((button) =>
-  button.addEventListener("click", () => {
-    modal?.setAttribute("hidden", "");
-  })
-);
-
-modal?.addEventListener("click", (event) => {
-  if (event.target === modal) {
-    modal?.setAttribute("hidden", "");
-  }
 });
 
 bannerClose?.addEventListener("click", () => {
@@ -245,13 +191,20 @@ const initHome = () => {
   renderServices();
   renderSpecialists();
   renderLabTests();
-  populateSelects();
   renderNews();
   renderTestimonials();
 };
 
 const initCommon = () => {
   initSmoothScroll();
+  siteNav?.querySelectorAll("details > ul a")?.forEach((link) => {
+    link.addEventListener("click", () => {
+      const detailsElement = link.closest("details");
+      if (detailsElement?.hasAttribute("open")) {
+        detailsElement.removeAttribute("open");
+      }
+    });
+  });
   initBanner();
   setYear();
 };
