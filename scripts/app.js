@@ -6,6 +6,9 @@ const servicesGrid = document.querySelector("#services-grid");
 const specialistsGrid = document.querySelector("#specialists-grid");
 const labList = document.querySelector("#lab-tests");
 const newsGrid = document.querySelector("#news-grid");
+const panelOverlay = document.querySelector("[data-panel-overlay]");
+const panels = Array.from(document.querySelectorAll("[data-panel]"));
+const panelTriggers = Array.from(document.querySelectorAll("[data-panel-trigger]"));
 const testimonialsViewport = document.querySelector("#testimonials-viewport");
 const banner = document.querySelector("#banner-emergente");
 const bannerText = banner?.querySelector(".banner__text");
@@ -15,7 +18,60 @@ const pageType = document.body?.dataset.page || "home";
 
 const state = {
   testimonialIndex: 0,
+  panelOpen: null,
 };
+
+const closeAllPanels = () => {
+  panels.forEach((panel) => {
+    panel.removeAttribute("data-active");
+    panel.setAttribute("aria-hidden", "true");
+  });
+  panelTriggers.forEach((trigger) => trigger.setAttribute("aria-expanded", "false"));
+  if (panelOverlay) {
+    panelOverlay.setAttribute("hidden", "");
+    panelOverlay.removeAttribute("data-active");
+  }
+  document.body.classList.remove("nav-panel-open");
+  state.panelOpen = null;
+};
+
+const openPanel = (panelId) => {
+  const panel = panels.find((item) => item.dataset.panel === panelId);
+  if (!panel) return;
+  closeAllPanels();
+  panel.setAttribute("data-active", "true");
+  panel.setAttribute("aria-hidden", "false");
+  panelTriggers
+    .filter((trigger) => trigger.dataset.panelTrigger === panelId)
+    .forEach((trigger) => trigger.setAttribute("aria-expanded", "true"));
+  if (panelOverlay) {
+    panelOverlay.removeAttribute("hidden");
+    panelOverlay.setAttribute("data-active", "true");
+  }
+  document.body.classList.add("nav-panel-open");
+  state.panelOpen = panelId;
+};
+
+const togglePanel = (panelId) => {
+  if (state.panelOpen === panelId) {
+    closeAllPanels();
+  } else {
+    openPanel(panelId);
+  }
+};
+
+const isMobileNavOpen = () => siteNav?.getAttribute("data-open") === "true";
+
+const setMobileNavState = (isOpen) => {
+  navToggle?.setAttribute("aria-expanded", String(isOpen));
+  siteNav?.setAttribute("data-open", String(isOpen));
+  document.body.classList.toggle("nav-open", isOpen);
+  if (!isOpen) {
+    closeAllPanels();
+  }
+};
+
+const closeMobileNav = () => setMobileNavState(false);
 
 const initSmoothScroll = () => {
   const scrollLinks = document.querySelectorAll("[data-scroll]");
@@ -32,18 +88,67 @@ const initSmoothScroll = () => {
 };
 
 navToggle?.addEventListener("click", () => {
-  const expanded = navToggle.getAttribute("aria-expanded") === "true";
-  navToggle.setAttribute("aria-expanded", String(!expanded));
-  siteNav?.setAttribute("data-open", String(!expanded));
-  document.body.classList.toggle("nav-open", !expanded);
+  setMobileNavState(!isMobileNavOpen());
 });
 
 siteNav?.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", () => {
-    navToggle?.setAttribute("aria-expanded", "false");
-    siteNav?.setAttribute("data-open", "false");
-    document.body.classList.remove("nav-open");
+    closeMobileNav();
+    closeAllPanels();
   });
+});
+
+panelTriggers.forEach((trigger) => {
+  trigger.addEventListener("click", () => {
+    const target = trigger.dataset.panelTrigger;
+    if (!target) return;
+    togglePanel(target);
+  });
+});
+
+panels.forEach((panel) => {
+  panel.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      closeAllPanels();
+      closeMobileNav();
+    });
+  });
+
+  panel.querySelectorAll("[data-panel-close]").forEach((button) => {
+    button.addEventListener("click", () => closeAllPanels());
+  });
+});
+
+panelOverlay?.addEventListener("click", () => {
+  closeAllPanels();
+  closeMobileNav();
+});
+
+document.addEventListener("pointerdown", (event) => {
+  const target = event.target;
+  const interactedWithNav = target.closest?.("#site-nav") || target.closest?.(".nav-toggle") || target.closest?.("[data-panel]");
+  if (!interactedWithNav) {
+    closeAllPanels();
+  }
+  if (isMobileNavOpen() && !interactedWithNav) {
+    closeMobileNav();
+  }
+});
+
+document.addEventListener("focusin", (event) => {
+  const target = event.target;
+  if (!target.closest?.("[data-panel]") && !target.closest?.("[data-panel-trigger]")) {
+    closeAllPanels();
+  }
+});
+
+globalThis.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeAllPanels();
+    if (isMobileNavOpen()) {
+      closeMobileNav();
+    }
+  }
 });
 
 const renderServices = () => {
@@ -197,14 +302,7 @@ const initHome = () => {
 
 const initCommon = () => {
   initSmoothScroll();
-  siteNav?.querySelectorAll("details > ul a")?.forEach((link) => {
-    link.addEventListener("click", () => {
-      const detailsElement = link.closest("details");
-      if (detailsElement?.hasAttribute("open")) {
-        detailsElement.removeAttribute("open");
-      }
-    });
-  });
+  closeAllPanels();
   initBanner();
   setYear();
 };

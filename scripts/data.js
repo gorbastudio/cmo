@@ -49,14 +49,6 @@ const CMO_DATA = {
       description: "Exámenes de rutina y pruebas especializadas con resultados confiables y rápidos.",
       cta: "Agendar",
     },
-    {
-      id: "diana-barahona",
-      name: "Dra. Diana Carolina Barahona",
-      specialty: "Dirección Técnica de Laboratorio",
-      schedule: "Lunes a sábado · 7:00 a.m. - 3:00 p.m.",
-      format: "Presencial",
-      photo: "https://i.pravatar.cc/160?img=21",
-    },
   ],
   specialists: [
     {
@@ -90,6 +82,22 @@ const CMO_DATA = {
       schedule: "Lunes a domingo · 24/7",
       format: "Presencial / Virtual",
       photo: "https://i.pravatar.cc/160?img=33",
+    },
+    {
+      id: "diana-barahona",
+      name: "Dra. Diana Carolina Barahona",
+      specialty: "Dirección Técnica de Laboratorio",
+      schedule: "Lunes a sábado · 7:00 a.m. - 3:00 p.m.",
+      format: "Presencial",
+      photo: "https://i.pravatar.cc/160?img=21",
+    },
+    {
+      id: "lucia-solano",
+      name: "Lic. Lucía Solano Blanco",
+      specialty: "Psicología Clínica",
+      schedule: "Agenda previa · Presencial y virtual",
+      format: "Presencial / Virtual",
+      photo: "https://i.pravatar.cc/160?img=66",
     },
   ],
   labTests: [
@@ -217,7 +225,7 @@ const CMO_DATA = {
         "Electrocardiogramas y monitoreo de signos vitales",
         "Coordinación de referencias con especialistas internos",
       ],
-      specialists: ["andres-campos"],
+      specialists: ["andres-campos", "luis-arias"],
       faqs: [
         {
           question: "¿Debo agendar cita para emergencias leves?",
@@ -346,7 +354,7 @@ const CMO_DATA = {
         "Tratamiento integral de acné",
         "Control de enfermedades autoinmunes cutáneas",
       ],
-      specialists: [],
+      specialists: ["diana-barahona"],
       faqs: [
         {
           question: "¿Realizan pruebas de alergia cutánea?",
@@ -514,6 +522,13 @@ const CMO_DATA = {
       start: "8:00 a.m.",
       end: "12:00 m.d.",
     },
+    {
+      specialistId: "lucia-solano",
+      specialty: "Psicología Clínica",
+      day: "Lunes a viernes",
+      start: "8:00 a.m.",
+      end: "5:00 p.m.",
+    },
   ],
   contact: {
     address: "Frente al EBAIS de Laguna, Zarcero, Alajuela.",
@@ -521,12 +536,24 @@ const CMO_DATA = {
     whatsapp: "8838-2301",
     emergencies: "6071-1273",
     email: "clinicemonteolivo@gmail.com",
+    coordinates: "10.209111817370834, -84.4040622495673",
     hours: {
       medical: "Consultas médicas: Lunes a domingo 24/7",
       lab: "Laboratorio: Lunes a viernes 7:00 a.m. – 3:00 p.m., sábados 7:00 a.m. – 12:00 m.d.",
     },
     mapEmbed:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.399144223665!2d-84.394!3d10.226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa09f61f479cb89%3A0x6c4f91adced1fcf7!2sCl%C3%ADnica%20Monte%20Olivo!5e0!3m2!1ses!2scr!4v1700000000000!5m2!1ses!2scr",
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6806.426653996862!2d-84.4040622495673!3d10.209111817370834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa05d7e0b277269%3A0xf7b669db22fb37db!2sCl%C3%ADnica%20Monteolivo!5e1!3m2!1ses-419!2scr!4v1762031626536!5m2!1ses-419!2scr",
+    social: {
+      instagram: "https://www.instagram.com/clinica_monteolivo/?hl=es-la",
+      facebook: "https://www.facebook.com/ClinicaMonteOlivo/?locale=es_LA",
+      emmaPay: "https://emmapay.com/costa-rica/emma-comercios/clinica-monte-olivo/",
+      psychologyToday: "https://www.psychologytoday.com/cr/psicologos/clinica-monteolivo-zarcero-al/1294493",
+      directMap: "https://directmap.ws/alajuela/1855",
+      instagramFollowers: "≈1.955",
+      facebookLikes: "≈2.868",
+      facebookTalkingAbout: "≈11",
+      facebookCheckins: "≈22",
+    },
   },
   booking: {
     channels: [

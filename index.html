@@ -25,20 +25,16 @@
         </button>
         <nav id="site-nav" class="site-nav" aria-label="Navegación principal">
           <ul>
-            <li class="nav-item nav-item--submenu">
-              <details>
-                <summary>Especialidades</summary>
-                <ul>
-                  <li><a href="templates/especialidades.html">Ver todas</a></li>
-                  <li><a href="templates/medicina-general.html">Medicina General</a></li>
-                  <li><a href="templates/ginecologia.html">Ginecología</a></li>
-                  <li><a href="templates/urologia.html">Urología</a></li>
-                  <li><a href="templates/dermatologia.html">Dermatología</a></li>
-                  <li><a href="templates/radiologia.html">Radiología</a></li>
-                  <li><a href="templates/terapia-lenguaje.html">Terapia del Lenguaje</a></li>
-                  <li><a href="templates/laboratorio-especialidad.html">Laboratorio Clínico</a></li>
-                </ul>
-              </details>
+            <li class="nav-item nav-item--panel">
+              <button
+                type="button"
+                class="nav-link nav-link--trigger"
+                data-panel-trigger="specialties"
+                aria-controls="specialties-panel"
+                aria-expanded="false"
+              >
+                Especialidades
+              </button>
             </li>
             <li><a href="templates/servicios.html">Servicios</a></li>
             <li><a href="templates/especialistas.html">Especialistas</a></li>
@@ -50,6 +46,28 @@
         </nav>
       </div>
     </header>
+
+    <div class="nav-panel-overlay" data-panel-overlay hidden></div>
+    <aside class="nav-panel" id="specialties-panel" data-panel="specialties" aria-hidden="true">
+      <div class="nav-panel__inner">
+        <div class="nav-panel__header">
+          <h2>Especialidades</h2>
+          <button class="nav-panel__close" type="button" aria-label="Cerrar panel" data-panel-close>&times;</button>
+        </div>
+        <nav class="nav-panel__nav" aria-label="Especialidades">
+          <ul>
+            <li><a href="templates/especialidades.html">Ver todas</a></li>
+            <li><a href="templates/medicina-general.html">Medicina General</a></li>
+            <li><a href="templates/ginecologia.html">Ginecología</a></li>
+            <li><a href="templates/urologia.html">Urología</a></li>
+            <li><a href="templates/dermatologia.html">Dermatología</a></li>
+            <li><a href="templates/radiologia.html">Radiología</a></li>
+            <li><a href="templates/terapia-lenguaje.html">Terapia del Lenguaje</a></li>
+            <li><a href="templates/laboratorio-especialidad.html">Laboratorio Clínico</a></li>
+          </ul>
+        </nav>
+      </div>
+    </aside>
 
     <main>
       <section class="hero" role="region" aria-label="Presentación">
