@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Especialidades médicas de Clínica Monte Olivo." />
+    <title>Especialidades | Clínica Monte Olivo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../styles/pages.css" />
+  </head>
+  <body data-page="services-hub">
+    <header class="site-header" id="top">
+      <div class="container header-inner">
+        <a href="../index.html#top" class="brand" aria-label="Clínica Monte Olivo">
+          <span class="brand__logo" aria-hidden="true">CMO</span>
+          <span class="brand__text">
+            <span>Clínica</span>
+            <strong>Monte Olivo</strong>
+          </span>
+        </a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">
+          <span></span>
+        </button>
+        <nav id="site-nav" class="site-nav" aria-label="Navegación principal">
+          <ul>
+            <li class="nav-item nav-item--submenu">
+              <details>
+                <summary>Especialidades</summary>
+                <ul>
+                  <li><a href="especialidades.html">Ver todas</a></li>
+                  <li><a href="medicina-general.html">Medicina General</a></li>
+                  <li><a href="ginecologia.html">Ginecología</a></li>
+                  <li><a href="urologia.html">Urología</a></li>
+                  <li><a href="dermatologia.html">Dermatología</a></li>
+                  <li><a href="radiologia.html">Radiología</a></li>
+                  <li><a href="terapia-lenguaje.html">Terapia del Lenguaje</a></li>
+                  <li><a href="laboratorio-especialidad.html">Laboratorio Clínico</a></li>
+                </ul>
+              </details>
+            </li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="especialistas.html">Especialistas</a></li>
+            <li><a href="laboratorio.html">Laboratorio</a></li>
+            <li><a href="noticias.html">Noticias</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+          <a class="btn btn--primary" href="agendar.html">Agendar cita</a>
+        </nav>
+      </div>
+    </header>
+
+    <nav class="page-nav" aria-label="Breadcrumb">
+      <div class="container">
+        <a href="../index.html">Inicio</a>
+        <span>/</span>
+        <span>Especialidades</span>
+      </div>
+    </nav>
+
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <p class="eyebrow">Clínica Monte Olivo</p>
+          <h1>Especialidades médicas y clínicas especializadas</h1>
+          <p class="lead">
+            Conoce nuestro portafolio de atención integral. Cada área cuenta con especialistas certificados, tecnología actualizada y coordinación directa con el laboratorio y radiología.
+          </p>
+          <div class="page-hero__stats" data-field="stats">
+            <div class="page-hero__stat">
+              <strong>15+</strong>
+              <span>Especialidades activas</span>
+            </div>
+            <div class="page-hero__stat">
+              <strong>24/7</strong>
+              <span>Atención médica general</span>
+            </div>
+            <div class="page-hero__stat">
+              <strong>3</strong>
+              <span>Canales de citas</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="page-section">
+        <div class="container">
+          <div class="page-section__header">
+            <h2>Explora nuestras áreas de atención</h2>
+            <p>Selecciona la especialidad que necesitas y descubre procedimientos, profesionales y preguntas frecuentes.</p>
+          </div>
+          <div class="specialties-grid" id="specialties-grid"></div>
+        </div>
+      </section>
+
+      <section class="cta" aria-label="CTA secundaria">
+        <div class="container cta__inner">
+          <div>
+            <h2>¿Listo para tu próxima consulta?</h2>
+            <p>Agenda en línea o contáctanos por WhatsApp 8838-2301. Coordinamos exámenes y radiología en la misma visita.</p>
+          </div>
+          <a class="btn btn--primary" href="agendar.html">Agendar ahora</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer__inner">
+        <div class="footer__brand">
+          <span class="brand__logo" aria-hidden="true">CMO</span>
+          <p>Clínica Monte Olivo · Zarcero</p>
+          <p>© <span id="year"></span> Todos los derechos reservados.</p>
+        </div>
+        <nav class="footer__nav" aria-label="Links secundarios">
+          <a href="servicios.html">Servicios</a>
+          <a href="especialidades.html">Especialidades</a>
+          <a href="noticias.html">Noticias</a>
+          <a href="contacto.html">Contacto</a>
+          <a href="#top">Volver arriba</a>
+        </nav>
+        <form class="footer__newsletter" aria-label="Suscripción a noticias">
+          <label for="newsletter-email">Recibe campañas de salud</label>
+          <div class="newsletter__controls">
+            <input type="email" id="newsletter-email" name="email" placeholder="tu@correo.com" aria-required="true" />
+            <button type="submit" class="btn btn--ghost">Suscribirme</button>
+          </div>
+          <p class="form-hint">Al suscribirte aceptas nuestro aviso de privacidad.</p>
+        </form>
+      </div>
+    </footer>
+
+    <script type="module" src="../scripts/app.js"></script>
+    <script type="module" src="../scripts/pages/specialties-page.js"></script>
+  </body>
+</html>

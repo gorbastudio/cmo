@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Agenda tu cita en Clínica Monte Olivo." />
+    <title>Agendar cita | Clínica Monte Olivo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../styles/pages.css" />
+  </head>
+  <body data-page="booking">
+    <header class="site-header" id="top">
+      <div class="container header-inner">
+        <a href="../index.html#top" class="brand" aria-label="Clínica Monte Olivo">
+          <span class="brand__logo" aria-hidden="true">CMO</span>
+          <span class="brand__text">
+            <span>Clínica</span>
+            <strong>Monte Olivo</strong>
+          </span>
+        </a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">
+          <span></span>
+        </button>
+        <nav id="site-nav" class="site-nav" aria-label="Navegación principal">
+          <ul>
+            <li class="nav-item nav-item--submenu">
+              <details open>
+                <summary>Especialidades</summary>
+                <ul>
+                  <li><a href="especialidades.html">Ver todas</a></li>
+                  <li><a href="medicina-general.html">Medicina General</a></li>
+                  <li><a href="ginecologia.html">Ginecología</a></li>
+                  <li><a href="urologia.html">Urología</a></li>
+                  <li><a href="dermatologia.html">Dermatología</a></li>
+                  <li><a href="radiologia.html">Radiología</a></li>
+                  <li><a href="terapia-lenguaje.html">Terapia del Lenguaje</a></li>
+                  <li><a href="laboratorio-especialidad.html">Laboratorio Clínico</a></li>
+                </ul>
+              </details>
+            </li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="especialistas.html">Especialistas</a></li>
+            <li><a href="laboratorio.html">Laboratorio</a></li>
+            <li><a href="noticias.html">Noticias</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+          <a class="btn btn--primary" href="agendar.html" aria-current="page">Agendar cita</a>
+        </nav>
+      </div>
+    </header>
+
+    <nav class="page-nav" aria-label="Breadcrumb">
+      <div class="container">
+        <a href="../index.html">Inicio</a>
+        <span>/</span>
+        <span>Agendar cita</span>
+      </div>
+    </nav>
+
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <p class="eyebrow">Gestor de citas Clínica Monte Olivo</p>
+          <h1>Reservá tu cita médica en pocos pasos</h1>
+          <p class="lead">
+            Seleccioná especialidad, profesional y modalidad de atención. Confirmamos tu cita por WhatsApp o correo en menos de 2 horas hábiles.
+          </p>
+          <div class="page-hero__stats" id="booking-stats"></div>
+        </div>
+      </section>
+
+      <section class="page-section" id="booking-section">
+        <div class="container booking-layout">
+          <form id="booking-form" class="booking-form" novalidate>
+            <h2>Datos de tu cita</h2>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="booking-specialty">Especialidad</label>
+                <select id="booking-specialty" name="specialty" required>
+                  <option value="" disabled selected>Selecciona una especialidad</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="booking-doctor">Profesional</label>
+                <select id="booking-doctor" name="doctor" required>
+                  <option value="" disabled selected>Selecciona un profesional</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="booking-mode">Modalidad</label>
+                <select id="booking-mode" name="mode" required>
+                  <option value="presencial" selected>Presencial</option>
+                  <option value="virtual">Virtual</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="booking-date">Fecha preferida</label>
+                <input type="date" id="booking-date" name="date" required />
+              </div>
+              <div class="form-group">
+                <label for="booking-time">Hora preferida</label>
+                <select id="booking-time" name="time" required>
+                  <option value="" disabled selected>Selecciona un rango horario</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="booking-channel">Confirmación por</label>
+                <select id="booking-channel" name="channel">
+                  <option value="whatsapp" selected>WhatsApp 8838-2301</option>
+                  <option value="llamada">Llamada telefónica</option>
+                  <option value="correo">Correo electrónico</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="booking-notes">Motivo de la consulta</label>
+              <textarea id="booking-notes" name="notes" rows="4" placeholder="Describe síntomas, estudio solicitado u otra información relevante."></textarea>
+            </div>
+            <fieldset class="form-group">
+              <legend>Datos del paciente</legend>
+              <div class="form-grid">
+                <div>
+                  <label for="booking-name">Nombre completo</label>
+                  <input type="text" id="booking-name" name="name" required />
+                </div>
+                <div>
+                  <label for="booking-id">Número de cédula</label>
+                  <input type="text" id="booking-id" name="id" />
+                </div>
+                <div>
+                  <label for="booking-phone">Teléfono</label>
+                  <input type="tel" id="booking-phone" name="phone" required />
+                </div>
+                <div>
+                  <label for="booking-email">Correo electrónico</label>
+                  <input type="email" id="booking-email" name="email" required />
+                </div>
+              </div>
+            </fieldset>
+            <button type="submit" class="btn btn--primary btn--full">Solicitar cita</button>
+            <p class="form-hint">Recibirás confirmación en menos de 2 horas hábiles. Para emergencias, llamá al <strong>6071-1273</strong>.</p>
+            <div class="form-success" id="booking-success" role="status" hidden>
+              <strong>¡Gracias!</strong> Tu solicitud fue enviada. Te contactaremos pronto para confirmar disponibilidad.
+            </div>
+          </form>
+
+          <aside class="booking-sidebar">
+            <section>
+              <h2>Canales de gestión</h2>
+              <ul class="channel-list" id="booking-channels"></ul>
+            </section>
+            <section>
+              <h2>¿Por qué agendar en línea?</h2>
+              <ul class="benefits-list">
+                <li>Disponibilidad actualizada por especialidad.</li>
+                <li>Coordinación directa con laboratorio y radiología.</li>
+                <li>Recordatorios automatizados por WhatsApp.</li>
+              </ul>
+            </section>
+          </aside>
+        </div>
+      </section>
+
+      <section class="page-section" id="booking-steps-section">
+        <div class="container">
+          <div class="page-section__header">
+            <h2>Cómo funciona el proceso</h2>
+            <p>Seguimos un flujo estandarizado para garantizar atención oportuna y seguimiento continuo.</p>
+          </div>
+          <div class="steps-grid" id="booking-steps"></div>
+        </div>
+      </section>
+
+      <section class="page-section" id="booking-faqs-section">
+        <div class="container">
+          <div class="page-section__header">
+            <h2>Preguntas frecuentes</h2>
+          </div>
+          <div class="page-section__grid" id="booking-faqs"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer__inner">
+        <div class="footer__brand">
+          <span class="brand__logo" aria-hidden="true">CMO</span>
+          <p>Clínica Monte Olivo · Zarcero</p>
+          <p>© <span id="year"></span> Todos los derechos reservados.</p>
+        </div>
+        <nav class="footer__nav" aria-label="Links secundarios">
+          <a href="servicios.html">Servicios</a>
+          <a href="especialidades.html">Especialidades</a>
+          <a href="noticias.html">Noticias</a>
+          <a href="contacto.html">Contacto</a>
+          <a href="#top">Volver arriba</a>
+        </nav>
+        <form class="footer__newsletter" aria-label="Suscripción a noticias">
+          <label for="newsletter-email">Recibe campañas de salud</label>
+          <div class="newsletter__controls">
+            <input type="email" id="newsletter-email" name="email" placeholder="tu@correo.com" aria-required="true" />
+            <button type="submit" class="btn btn--ghost">Suscribirme</button>
+          </div>
+          <p class="form-hint">Al suscribirte aceptas nuestro aviso de privacidad.</p>
+        </form>
+      </div>
+    </footer>
+
+    <script type="module" src="../scripts/app.js"></script>
+    <script type="module" src="../scripts/pages/booking-page.js"></script>
+  </body>
+</html>
