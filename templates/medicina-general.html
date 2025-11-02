@@ -26,48 +26,32 @@
         </button>
         <nav id="site-nav" class="site-nav" aria-label="Navegación principal">
           <ul>
-            <li class="nav-item nav-item--panel">
-              <button
-                type="button"
-                class="nav-link nav-link--trigger"
-                data-panel-trigger="specialties"
-                aria-controls="specialties-panel"
-                aria-expanded="false"
-              >
-                Especialidades
-              </button>
+            <li class="nav-item nav-item--submenu">
+              <details>
+                <summary>Especialidades</summary>
+                <ul>
+                  <li><a href="especialidades.html">Ver todas</a></li>
+                  <li><a href="medicina-general.html" aria-current="page">Medicina General</a></li>
+                  <li><a href="ginecologia.html">Ginecología</a></li>
+                  <li><a href="urologia.html">Urología</a></li>
+                  <li><a href="dermatologia.html">Dermatología</a></li>
+                  <li><a href="radiologia.html">Radiología</a></li>
+                  <li><a href="terapia-lenguaje.html">Terapia del Lenguaje</a></li>
+                  <li><a href="laboratorio-especialidad.html">Laboratorio Clínico</a></li>
+                </ul>
+              </details>
             </li>
             <li><a href="../index.html#servicios">Servicios</a></li>
             <li><a href="../index.html#especialistas">Especialistas</a></li>
             <li><a href="../index.html#laboratorio">Laboratorio</a></li>
             <li><a href="../index.html#noticias">Noticias</a></li>
+            <li><a href="../templates/dashboard.html">Dashboard</a></li>
+            <li><a href="../index.html#contacto">Contacto</a></li>
           </ul>
           <a class="btn btn--primary" href="../index.html#agendar" data-scroll>Agendar cita</a>
         </nav>
       </div>
     </header>
-
-    <div class="nav-panel-overlay" data-panel-overlay hidden></div>
-    <aside class="nav-panel" id="specialties-panel" data-panel="specialties" aria-hidden="true">
-      <div class="nav-panel__inner">
-        <div class="nav-panel__header">
-          <h2>Especialidades</h2>
-          <button class="nav-panel__close" type="button" aria-label="Cerrar panel" data-panel-close>&times;</button>
-        </div>
-        <nav class="nav-panel__nav" aria-label="Especialidades">
-          <ul>
-            <li><a href="especialidades.html">Ver todas</a></li>
-            <li><a href="medicina-general.html" aria-current="page">Medicina General</a></li>
-            <li><a href="ginecologia.html">Ginecología</a></li>
-            <li><a href="urologia.html">Urología</a></li>
-            <li><a href="dermatologia.html">Dermatología</a></li>
-            <li><a href="radiologia.html">Radiología</a></li>
-            <li><a href="terapia-lenguaje.html">Terapia del Lenguaje</a></li>
-            <li><a href="laboratorio-especialidad.html">Laboratorio Clínico</a></li>
-          </ul>
-        </nav>
-      </div>
-    </aside>
 
     <nav class="page-nav" aria-label="Breadcrumb">
       <div class="container">

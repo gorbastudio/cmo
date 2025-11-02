@@ -58,6 +58,16 @@ const CMO_DATA = {
       schedule: "Martes y jueves · 2:00 p.m. - 6:00 p.m.",
       format: "Presencial / Virtual",
       photo: "https://i.pravatar.cc/160?img=47",
+      bio:
+        "Acompaña controles preventivos, planificación familiar y seguimiento obstétrico con énfasis en educación para la salud y prevención temprana.",
+      focuses: ["Controles ginecológicos", "Planificación familiar", "Ultrasonido obstétrico"],
+      contact: {
+        phone: "2463-5005",
+        whatsapp: "8838-2301",
+        email: "citas@clinicemonteolivo.com",
+        profileUrl: "contacto.html#formulario",
+      },
+      languages: ["Español"],
     },
     {
       id: "johnny-rodriguez",
@@ -66,6 +76,16 @@ const CMO_DATA = {
       schedule: "Sábados · 8:00 a.m. - 12:00 m.d.",
       format: "Presencial",
       photo: "https://i.pravatar.cc/160?img=12",
+      bio:
+        "Realiza diagnósticos y procedimientos urológicos ambulatorios, con enfoque en prevención masculina y tratamientos mínimamente invasivos.",
+      focuses: ["Tamizaje prostático", "Cirugías ambulatorias", "Manejo de litiasis"],
+      contact: {
+        phone: "2463-5005",
+        whatsapp: "8838-2301",
+        email: "citas@clinicemonteolivo.com",
+        profileUrl: "contacto.html#formulario",
+      },
+      languages: ["Español"],
     },
     {
       id: "karla-coto",
@@ -74,6 +94,16 @@ const CMO_DATA = {
       schedule: "Miércoles y viernes · 9:00 a.m. - 4:00 p.m.",
       format: "Presencial / Domicilio",
       photo: "https://i.pravatar.cc/160?img=58",
+      bio:
+        "Diseña planes terapéuticos personalizados para trastornos del habla, lenguaje y deglución en población infantil y adulta.",
+      focuses: ["Intervención temprana", "Rehabilitación deglutoria", "Comunicación funcional"],
+      contact: {
+        phone: "2463-5005",
+        whatsapp: "8838-2301",
+        email: "citas@clinicemonteolivo.com",
+        profileUrl: "contacto.html#formulario",
+      },
+      languages: ["Español"],
     },
     {
       id: "andres-campos",
@@ -82,6 +112,16 @@ const CMO_DATA = {
       schedule: "Lunes a domingo · 24/7",
       format: "Presencial / Virtual",
       photo: "https://i.pravatar.cc/160?img=33",
+      bio:
+        "Coordina la atención primaria 24/7, estabiliza urgencias leves y canaliza al paciente con especialistas o laboratorio interno según necesidad.",
+      focuses: ["Urgencias leves", "Control de enfermedades crónicas", "Certificados médicos"],
+      contact: {
+        phone: "2463-5005",
+        whatsapp: "8838-2301",
+        email: "citas@clinicemonteolivo.com",
+        profileUrl: "contacto.html#formulario",
+      },
+      languages: ["Español"],
     },
     {
       id: "diana-barahona",
@@ -90,14 +130,52 @@ const CMO_DATA = {
       schedule: "Lunes a sábado · 7:00 a.m. - 3:00 p.m.",
       format: "Presencial",
       photo: "https://i.pravatar.cc/160?img=21",
+      bio:
+        "Microbióloga y Química Clínica responsable del Laboratorio Monte Olivo. Supervisa la calidad de resultados y coordina campañas empresariales y atención a emergencias, según la rotulación oficial del laboratorio (fotografía proporcionada).",
+      focuses: ["Diagnóstico clínico", "Paneles especializados", "Campañas empresariales"],
+      contact: {
+        phone: "2463-5006",
+        whatsapp: "8980-6406",
+        email: "laboratoriomonteolivo@gmail.com",
+        profileUrl:
+          "https://www.facebook.com/ClinicaMonteOlivo/?locale=es_LA",
+      },
+      languages: ["Español"],
+      sources: [
+        {
+          label: "Cartelería Laboratorio Monte Olivo (fotografía)",
+          url: null,
+        },
+        {
+          label: "Facebook Clínica Monte Olivo",
+          url: "https://www.facebook.com/ClinicaMonteOlivo/?locale=es_LA",
+        },
+      ],
     },
     {
       id: "lucia-solano",
       name: "Lic. Lucía Solano Blanco",
       specialty: "Psicología Clínica",
-      schedule: "Agenda previa · Presencial y virtual",
-      format: "Presencial / Virtual",
+      schedule: "Agenda previa · Coordinación telefónica",
+      format: "Presencial",
       photo: "https://i.pravatar.cc/160?img=66",
+      bio:
+        "Psicóloga colegiada que atiende en Clínica Monteolivo, Zarcero. Información verificada en Psychology Today (perfil Clinica Monteolivo).",
+      focuses: [],
+      contact: {
+        phone: "8964-1345",
+        whatsapp: "8964-1345",
+        email: null,
+        profileUrl:
+          "https://www.psychologytoday.com/cr/psicologos/clinica-monteolivo-zarcero-al/1294493",
+      },
+      languages: ["Español"],
+      sources: [
+        {
+          label: "Psychology Today",
+          url: "https://www.psychologytoday.com/cr/psicologos/clinica-monteolivo-zarcero-al/1294493",
+        },
+      ],
     },
   ],
   labTests: [
@@ -225,7 +303,12 @@ const CMO_DATA = {
         "Electrocardiogramas y monitoreo de signos vitales",
         "Coordinación de referencias con especialistas internos",
       ],
-      specialists: ["andres-campos", "luis-arias"],
+      preparation: [
+        "Traé resultados de laboratorio recientes y la lista de medicamentos que utilizás a diario.",
+        "Si presentaste síntomas agudos, registrá su duración, intensidad y desencadenantes para comentarlos durante la consulta.",
+        "Llegá 15 minutos antes para toma de signos vitales y actualización de historial clínico.",
+      ],
+      specialists: ["andres-campos"],
       faqs: [
         {
           question: "¿Debo agendar cita para emergencias leves?",
@@ -236,6 +319,11 @@ const CMO_DATA = {
           question: "¿Atienden consultas virtuales?",
           answer:
             "Sí, realizamos valoraciones virtuales cuando la condición lo permite y coordinamos exámenes complementarios si se requieren.",
+        },
+        {
+          question: "¿Realizan chequeos preventivos empresariales?",
+          answer:
+            "Sí, coordinamos jornadas de valoración en sitio o en la clínica con informes consolidados para empresas de la zona.",
         },
       ],
     },
@@ -271,6 +359,11 @@ const CMO_DATA = {
         "Atención de patología cervical",
         "Educación para vida saludable y climaterio",
       ],
+      preparation: [
+        "Agendá tu control anual fuera de la menstruación para obtener una citología adecuada.",
+        "Evitá duchas vaginales, óvulos o cremas intravaginales 48 horas antes de la cita.",
+        "Traé registros de ciclos, embarazos previos y estudios complementarios para completar el historial.",
+      ],
       specialists: ["marianela-salas"],
       faqs: [
         {
@@ -282,6 +375,11 @@ const CMO_DATA = {
           question: "¿Realizan pruebas prenatales de laboratorio?",
           answer:
             "Sí, coordinamos exámenes con el laboratorio interno y entregamos resultados digitales y físicos.",
+        },
+        {
+          question: "¿Puedo agendar consejería de anticoncepción?",
+          answer:
+            "Sí, ofrecemos sesiones especializadas para elegir el método adecuado, incluyendo opciones hormonales, DIU y planificación natural.",
         },
       ],
     },
@@ -307,11 +405,22 @@ const CMO_DATA = {
           title: "Prevención masculina",
           description: "Tamizaje prostático, valoración de fertilidad y manejo de disfunción eréctil.",
         },
+        {
+          title: "Rehabilitación pélvica",
+          description: "Plan de ejercicios y biofeedback para fortalecer el piso pélvico y prevenir incontinencia.",
+        },
       ],
       procedures: [
-        "Estudios urodinámicos básicos",
+        "Estudios urodinámicos básicos y avanzados",
+        "Cistoscopia flexible y biopsias prostáticas guiadas",
         "Manejo integral de infecciones urinarias recurrentes",
-        "Tratamiento de litiasis",
+        "Tratamiento de litiasis y seguimiento post quirúrgico",
+        "Programas de vigilancia prostática y salud masculina",
+      ],
+      preparation: [
+        "Consumí suficiente agua previo a los ultrasonidos para lograr una vejiga moderadamente llena.",
+        "Traé resultados previos (PSA, urocultivo, imágenes) impresos o en formato digital.",
+        "Evitá cafeína y alcohol 24 horas antes de estudios urodinámicos para obtener mediciones fiables.",
       ],
       specialists: ["johnny-rodriguez"],
       faqs: [
@@ -323,6 +432,22 @@ const CMO_DATA = {
         {
           question: "¿Qué debo llevar a la consulta?",
           answer: "Exámenes previos, medicamentos actuales y antecedentes médicos relevantes.",
+        },
+        {
+          question: "¿Brindan orientación sobre salud sexual masculina?",
+          answer:
+            "Sí, abordamos disfunción eréctil, eyaculación precoz y planificación familiar desde un enfoque integral.",
+        },
+        {
+          question: "¿Cuál es el tiempo de recuperación tras un procedimiento ambulatorio?",
+          answer:
+            "La mayoría de intervenciones mínimamente invasivas permiten retomar actividades ligeras en 24-48 horas; entregamos indicaciones personalizadas por escrito.",
+        },
+      ],
+      sources: [
+        {
+          label: "Mayo Clinic - Urología",
+          url: "https://www.mayoclinic.org/es/departments-centers/urology/sections/overview/ovc-20336015",
         },
       ],
     },
@@ -348,17 +473,41 @@ const CMO_DATA = {
           title: "Dermatitis y alergias",
           description: "Planes personalizados para dermatitis atópica, psoriasis y acné resistente.",
         },
+        {
+          title: "Dermocosmética clínica",
+          description: "Protocolos de rejuvenecimiento, manejo de manchas y cicatrices con peelings médicos y luz pulsada.",
+        },
       ],
       procedures: [
         "Chequeo anual de lunares",
         "Tratamiento integral de acné",
         "Control de enfermedades autoinmunes cutáneas",
+        "Terapia fotodinámica y crioterapia para lesiones premalignas",
+      ],
+      preparation: [
+        "Asistí sin maquillaje ni productos tópicos para evaluar la piel con precisión.",
+        "Aplicá protector solar diariamente y evitá cabinas de bronceado siete días antes del control.",
+        "Suspendé exfoliantes químicos o retinoides al menos cinco días antes de procedimientos con láser o peeling.",
       ],
       specialists: ["diana-barahona"],
       faqs: [
         {
           question: "¿Realizan pruebas de alergia cutánea?",
           answer: "Coordinamos pruebas epicutáneas con nuestro laboratorio según valoración médica.",
+        },
+        {
+          question: "¿Atienden a pacientes pediátricos?",
+          answer: "Sí, contamos con protocolos seguros para dermatitis atópica, verrugas y alergias en población infantil.",
+        },
+        {
+          question: "¿Qué cuidados posprocedimiento debo seguir?",
+          answer: "Entregamos guías personalizadas, que incluyen uso de frío local, fotoprotección estricta y seguimiento para revisar la evolución.",
+        },
+      ],
+      sources: [
+        {
+          label: "Quirónsalud - Dermatología",
+          url: "https://www.quironsalud.com/hospital-la-luz/es/cartera-servicios/dermatologia",
         },
       ],
     },
@@ -384,11 +533,21 @@ const CMO_DATA = {
           title: "Ultrasonidos",
           description: "Estudios abdominales, renales, partes blandas y obstétricos complementarios a especialistas.",
         },
+        {
+          title: "Informes integrados",
+          description: "Resultados digitales enlazados al expediente clínico para decisiones rápidas del equipo médico.",
+        },
       ],
       procedures: [
         "Rayos X de extremidades y tórax",
         "Ultrasonido obstétrico y ginecológico",
         "Ultrasonido de partes blandas",
+        "Densitometría ósea y control de implantología según disponibilidad",
+      ],
+      preparation: [
+        "Presentate 15 minutos antes para completar consentimiento y retirar objetos metálicos.",
+        "Para ultrasonido abdominal, mantené ayuno de 6 horas salvo indicación contraria.",
+        "Llevá estudios o placas previas para comparar evolución y reducir radiación innecesaria.",
       ],
       specialists: [],
       faqs: [
@@ -400,6 +559,10 @@ const CMO_DATA = {
         {
           question: "¿Cuál es el tiempo de entrega de resultados?",
           answer: "Entre 1 y 2 horas para estudios estándar; se envían digitales y se entregan impresos si se requieren.",
+        },
+        {
+          question: "¿Puedo realizar estudios durante el embarazo?",
+          answer: "Evaluamos cada caso con el médico tratante; priorizamos ultrasonido y diferimos estudios con radiación cuando no son urgentes.",
         },
       ],
     },
@@ -431,6 +594,11 @@ const CMO_DATA = {
         "Planes terapéuticos personalizados",
         "Sesiones de seguimiento con indicadores de progreso",
       ],
+      preparation: [
+        "Compartí reportes escolares, médicos o terapéuticos previos para contextualizar los objetivos.",
+        "Practiquen en casa los ejercicios recomendados y registren avances o dificultades para revisarlos en sesión.",
+        "Para sesiones a domicilio, preparen un espacio tranquilo, iluminado y libre de distracciones.",
+      ],
       specialists: ["karla-coto"],
       faqs: [
         {
@@ -441,13 +609,17 @@ const CMO_DATA = {
           question: "¿Cómo se mide el avance?",
           answer: "Utilizamos escalas estandarizadas y enviamos reportes periódicos a la familia o médico tratante.",
         },
+        {
+          question: "¿Atienden a adultos tras eventos neurológicos?",
+          answer: "Sí, desarrollamos programas de rehabilitación del habla y deglución para personas que han sufrido ACV o traumatismos.",
+        },
       ],
     },
     laboratorio: {
       eyebrow: "Resultados confiables",
       title: "Laboratorio Clínico Monte Olivo",
       summary:
-        "Exámenes de rutina y pruebas especializadas dirigidos por la Dra. Diana Carolina Barahona Jiménez, con entrega oportuna de resultados.",
+        "Exámenes de rutina y pruebas especializadas dirigidos por la Dra. Diana Carolina Barahona Jiménez (Microbióloga y Química Clínica). Horario según rotulación oficial: L-V 7:00 a.m. – 3:00 p.m., sábados 7:00 a.m. – 12:00 m.d.",
       stats: [
         { label: "Horario", value: "L-V 7:00-15:00" },
         { label: "Sábados", value: "7:00-12:00" },
@@ -466,11 +638,16 @@ const CMO_DATA = {
           title: "Atención empresarial",
           description: "Tamizajes ocupacionales y campañas de salud in-house.",
         },
+        {
+          title: "Toma pediátrica",
+          description: "Personal capacitado y material adaptado para disminuir el estrés en niños y adolescentes.",
+        },
       ],
       procedures: [
         "Recolección domiciliar para personas adultas mayores",
         "Entrega digital y física de resultados",
         "Coordinación con especialistas para interpretación conjunta",
+        "Control de calidad interno y participación en programas externos de aseguramiento",
       ],
       preparation: [
         "Presentarse con ayuno de 8 a 12 horas según examen.",
@@ -485,6 +662,10 @@ const CMO_DATA = {
         {
           question: "¿Ofrecen toma de muestra a domicilio?",
           answer: "Sí, con cita previa y según disponibilidad en Zarcero y alrededores.",
+        },
+        {
+          question: "¿Aceptan órdenes de médicos externos?",
+          answer: "Sí, procesamos órdenes de profesionales externos y enviamos el reporte digital a ambos, paciente y médico tratante.",
         },
       ],
     },
@@ -598,4 +779,135 @@ const CMO_DATA = {
       },
     ],
   },
-}
+  dashboard: {
+    kpis: [
+      { id: "appointments-today", label: "Citas de hoy", value: 42, trend: "+8%" },
+      { id: "pending-confirmation", label: "Pendientes por confirmar", value: 9, trend: "-3" },
+      { id: "satisfaction", label: "Satisfacción pacientes", value: "4.8/5", trend: "+0.1" },
+      { id: "response-time", label: "Tiempo medio respuesta", value: "18 min", trend: "-6 min" },
+    ],
+    upcoming: [
+      {
+        id: "apt-001",
+        patient: "María Fernanda López",
+        time: "08:30",
+        specialty: "Ginecología",
+        professionalId: "marianela-salas",
+        channel: "WhatsApp",
+        status: "Confirmada",
+      },
+      {
+        id: "apt-002",
+        patient: "José Miguel Arrieta",
+        time: "09:00",
+        specialty: "Medicina General",
+        professionalId: "andres-campos",
+        channel: "Llamada telefónica",
+        status: "En sala",
+      },
+      {
+        id: "apt-003",
+        patient: "Laura Calvo Rojas",
+        time: "09:30",
+        specialty: "Laboratorio Clínico",
+        professionalId: "diana-barahona",
+        channel: "Reserva en línea",
+        status: "Pendiente confirmación",
+      },
+      {
+        id: "apt-004",
+        patient: "Carlos Montero",
+        time: "10:15",
+        specialty: "Psicología Clínica",
+        professionalId: "lucia-solano",
+        channel: "Reserva en línea",
+        status: "Confirmada",
+      },
+    ],
+    teamNotes: [
+      {
+        specialistId: "marianela-salas",
+        today: "2 cupos",
+        note: "Ultrasonido obstétrico programado a las 11:00, bloquear 30 minutos previos.",
+      },
+      {
+        specialistId: "andres-campos",
+        today: "Sin cupos",
+        note: "Guardia 24/7: priorizar emergencias leves y tele-consultas agendadas.",
+      },
+      {
+        specialistId: "diana-barahona",
+        today: "6 muestras programadas",
+        note: "Enviar reportes empresariales antes de las 4:00 p.m.",
+      },
+      {
+        specialistId: "lucia-solano",
+        today: "1 cupo virtual",
+        note: "Recordar envío de consentimiento informado digital.",
+      },
+    ],
+    alerts: [
+      {
+        id: "alert-urgent",
+        type: "warning",
+        message: "Paciente con dolor abdominal reportó retraso, priorizar valoración al llegar (cita 10:45).",
+      },
+      {
+        id: "alert-lab",
+        type: "info",
+        message: "Campaña empresarial de laboratorio inicia mañana; revisar inventario de reactivos.",
+      },
+    ],
+  },
+  account: {
+    profile: {
+      name: "Carolina Mora",
+      role: "Coordinadora de Operaciones",
+      memberSince: "Desde 2022",
+      avatar: "https://i.pravatar.cc/200?img=45",
+      location: "Laguna de Zarcero, Alajuela",
+    },
+    stats: [
+      { id: "appointments-managed", label: "Citas gestionadas este mes", value: 312 },
+      { id: "satisfaction-score", label: "Puntuación de servicio", value: "4.9/5" },
+      { id: "response-sla", label: "SLA de respuesta", value: "15 min" },
+    ],
+    preferences: [
+      "Notificaciones críticas por WhatsApp",
+      "Resumen diario vía correo electrónico",
+      "Modo oscuro habilitado en apps móviles",
+    ],
+    shortcuts: [
+      { label: "Ver agenda de hoy", href: "dashboard.html#dashboard-upcoming-title" },
+      { label: "Gestionar especialistas", href: "especialistas.html" },
+      { label: "Solicitudes de contacto", href: "contacto.html#contact-form" },
+    ],
+    recentActivity: [
+      {
+        id: "activity-001",
+        description: "Confirmó 5 citas pendientes para laboratorio",
+        timestamp: "01 nov 2025 · 15:45",
+      },
+      {
+        id: "activity-002",
+        description: "Actualizó disponibilidad de la Dra. Marianela Salas",
+        timestamp: "01 nov 2025 · 14:20",
+      },
+      {
+        id: "activity-003",
+        description: "Agregó nota de seguimiento para paciente Carlos Montero",
+        timestamp: "01 nov 2025 · 11:35",
+      },
+    ],
+    summary: {
+      title: "Resumen de cuenta",
+      description: "Revisa tus estadísticas y preferencias en una sola página.",
+      stats: [
+        { id: "total-appointments", label: "Citas gestionadas", value: 312 },
+        { id: "total-specialists", label: "Especialistas gestionados", value: 5 },
+      ],
+    },
+  },
+};
+
+export default CMO_DATA;

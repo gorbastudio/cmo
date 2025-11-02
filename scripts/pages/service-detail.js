@@ -100,7 +100,25 @@ const renderSpecialists = () => {
       <p>${spec.specialty}</p>
       <p>${spec.schedule}</p>
       <p>${spec.format}</p>
-      <a class="btn btn--ghost" href="../index.html#agendar">Agendar cita</a>
+      ${spec.bio ? `<p class="specialist-card__bio">${spec.bio}</p>` : ""}
+      ${Array.isArray(spec.focuses) && spec.focuses.length
+        ? `<ul class="specialist-card__focuses">${spec.focuses
+            .map((item) => `<li>${item}</li>`)
+            .join("")}</ul>`
+        : ""}
+      <dl class="specialist-card__contact">
+        <div>
+          <dt>WhatsApp</dt>
+          <dd><a href="https://wa.me/506${(spec.contact?.whatsapp || "8838-2301").replace(/[^\d]/g, "")}">${spec.contact?.whatsapp || "8838-2301"}</a></dd>
+        </div>
+        <div>
+          <dt>Teléfono</dt>
+          <dd><a href="tel:${spec.contact?.phone || "24635005"}">${spec.contact?.phone || "2463-5005"}</a></dd>
+        </div>
+        ${spec.contact?.email ? `<div><dt>Correo</dt><dd><a href="mailto:${spec.contact.email}">${spec.contact.email}</a></dd></div>` : ""}
+      </dl>
+      ${Array.isArray(spec.languages) && spec.languages.length ? `<p class="specialist-card__languages">Idiomas: ${spec.languages.join(", ")}</p>` : ""}
+      <a class="btn btn--ghost" href="../agendar.html?specialist=${spec.id}">Agendar cita</a>
     `;
     fragment.appendChild(article);
   });

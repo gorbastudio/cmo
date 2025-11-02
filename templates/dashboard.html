@@ -3,15 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Equipo de especialistas de Clínica Monte Olivo." />
-    <title>Especialistas | Clínica Monte Olivo</title>
+    <meta name="description" content="Panel de control de citas de Clínica Monte Olivo." />
+    <title>Dashboard de Citas | Clínica Monte Olivo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../styles/main.css" />
     <link rel="stylesheet" href="../styles/pages.css" />
   </head>
-  <body data-page="specialists">
+  <body data-page="dashboard">
     <header class="site-header" id="top">
       <div class="container header-inner">
         <a href="../index.html#top" class="brand" aria-label="Clínica Monte Olivo">
@@ -42,10 +42,10 @@
               </details>
             </li>
             <li><a href="servicios.html">Servicios</a></li>
-            <li><a href="especialistas.html" aria-current="page">Especialistas</a></li>
+            <li><a href="especialistas.html">Especialistas</a></li>
             <li><a href="laboratorio.html">Laboratorio</a></li>
             <li><a href="noticias.html">Noticias</a></li>
-            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="dashboard.html" aria-current="page">Dashboard</a></li>
             <li><a href="contacto.html">Contacto</a></li>
           </ul>
           <a class="btn btn--primary" href="agendar.html">Agendar cita</a>
@@ -57,54 +57,60 @@
       <div class="container">
         <a href="../index.html">Inicio</a>
         <span>/</span>
-        <span>Especialistas</span>
+        <span>Dashboard</span>
       </div>
     </nav>
 
     <main>
       <section class="page-hero">
         <div class="container">
-          <p class="eyebrow">Equipo multidisciplinario</p>
-          <h1>Profesionales colegiados a tu servicio</h1>
+          <p class="eyebrow">Panel operativo</p>
+          <h1>Dashboard de citas y operaciones</h1>
           <p class="lead">
-            Médicos generales y especialistas certificados con experiencia en diagnóstico, tratamiento y seguimiento integral, coordinados con el laboratorio y el área de radiología.
+            Monitoreá indicadores clave, próximas consultas y alertas del día. Los datos se actualizan en tiempo real
+            a partir de la agenda centralizada.
           </p>
-          <div class="page-hero__stats" id="specialists-stats"></div>
-          <div class="hero__cta">
-            <a class="btn btn--primary" href="agendar.html">Reservar cita</a>
-            <a class="btn btn--ghost" href="contacto.html">Consultar disponibilidad</a>
-          </div>
+          <div class="dashboard-kpis" id="dashboard-kpis" aria-live="polite"></div>
         </div>
       </section>
 
-      <section class="page-section">
+      <section class="page-section" aria-labelledby="dashboard-alerts-title">
         <div class="container">
           <div class="page-section__header">
-            <h2>Directorio médico</h2>
-            <p>Filtra por especialidad y canal de atención para encontrar al profesional que necesitás.</p>
+            <h2 id="dashboard-alerts-title">Alertas y avisos</h2>
+            <p>Tareas prioritarias que requieren seguimiento del equipo administrativo y médico.</p>
           </div>
-          <div class="filters" id="specialists-filters" aria-label="Filtros de especialistas"></div>
-          <div class="specialists-grid" id="specialists-grid"></div>
+          <div class="dashboard-alerts" id="dashboard-alerts"></div>
         </div>
       </section>
 
-      <section class="page-section" id="specialists-availability" hidden>
+      <section class="page-section" aria-labelledby="dashboard-upcoming-title">
         <div class="container">
           <div class="page-section__header">
-            <h2>Bloques de agenda destacados</h2>
-            <p>Horarios con mayor demanda y cupos disponibles para citas presenciales y virtuales.</p>
+            <h2 id="dashboard-upcoming-title">Próximas citas</h2>
+            <p>Visualizá la siguiente hora de atención, el canal de reserva y el estado de confirmación.</p>
           </div>
-          <div class="availability-grid" id="availability-grid"></div>
+          <div class="dashboard-upcoming" role="table" aria-label="Listado de próximas citas">
+            <div class="dashboard-upcoming__header" role="row">
+              <span role="columnheader">Paciente</span>
+              <span role="columnheader">Hora</span>
+              <span role="columnheader">Especialidad</span>
+              <span role="columnheader">Profesional</span>
+              <span role="columnheader">Canal</span>
+              <span role="columnheader">Estado</span>
+            </div>
+            <div class="dashboard-upcoming__body" id="dashboard-upcoming"></div>
+          </div>
         </div>
       </section>
 
-      <section class="cta" aria-label="CTA secundaria">
-        <div class="container cta__inner">
-          <div>
-            <h2>¿Sos profesional de la salud?</h2>
-            <p>Integra tus servicios a la red de Clínica Monte Olivo y accedé a infraestructura, laboratorio y gestión de citas centralizada.</p>
+      <section class="page-section" aria-labelledby="dashboard-team-title">
+        <div class="container">
+          <div class="page-section__header">
+            <h2 id="dashboard-team-title">Disponibilidad del equipo</h2>
+            <p>Notas rápidas para coordinar agendas y recordatorios operativos por profesional.</p>
           </div>
-          <a class="btn btn--primary" href="contacto.html#formulario">Postularme</a>
+          <div class="dashboard-team" id="dashboard-team"></div>
         </div>
       </section>
     </main>
@@ -135,6 +141,6 @@
     </footer>
 
     <script type="module" src="../scripts/app.js"></script>
-    <script type="module" src="../scripts/pages/specialists-page.js"></script>
+    <script type="module" src="../scripts/pages/dashboard-page.js"></script>
   </body>
 </html>

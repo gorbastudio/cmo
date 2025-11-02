@@ -63,6 +63,26 @@ const buildSpecialistCard = (specialist) => {
       <h3>${specialist.name}</h3>
       <p class="specialist-card__specialty">${specialist.specialty}</p>
       <p class="specialist-card__meta">${specialist.schedule}<br />${specialist.format}</p>
+      ${specialist.bio ? `<p class="specialist-card__bio">${specialist.bio}</p>` : ""}
+      ${Array.isArray(specialist.focuses) && specialist.focuses.length
+        ? `<ul class="specialist-card__focuses">${specialist.focuses
+            .map((item) => `<li>${item}</li>`)
+            .join("")}</ul>`
+        : ""}
+      <dl class="specialist-card__contact">
+        <div>
+          <dt>WhatsApp</dt>
+          <dd><a href="https://wa.me/506${(specialist.contact?.whatsapp || "").replace(/[^\d]/g, "")}">${specialist.contact?.whatsapp || "8838-2301"}</a></dd>
+        </div>
+        <div>
+          <dt>Teléfono</dt>
+          <dd><a href="tel:${specialist.contact?.phone || "24635005"}">${specialist.contact?.phone || "2463-5005"}</a></dd>
+        </div>
+        ${specialist.contact?.email ? `<div><dt>Correo</dt><dd><a href="mailto:${specialist.contact.email}">${specialist.contact.email}</a></dd></div>` : ""}
+      </dl>
+      ${Array.isArray(specialist.languages) && specialist.languages.length
+        ? `<p class="specialist-card__languages">Idiomas: ${specialist.languages.join(", ")}</p>`
+        : ""}
       <div class="specialist-card__actions">
         <a class="btn btn--ghost" href="agendar.html" data-specialist="${specialist.id}">Reservar cita</a>
         <a class="btn btn--text" href="${href}">Ver especialidad</a>
